@@ -1,0 +1,138 @@
+{
+  "project_title": "Newsroom Admin Dashboard & Editorial Pipeline",
+  "app_type": "dashboard",
+  "archetype": "Swiss High-Contrast Editorial Command Center",
+  "target_audience": "News editors, journalists, editorial workflow managers, content reviewers",
+  "design_philosophy": {
+    "core_principles": [
+      "Tactical Density: Maximize information clarity and rapid triage without visual noise",
+      "Editorial Precision: Distinct visual contrast between raw feeds (original) and polished output (rewritten)",
+      "Unmistakable Status Hierarchy: Color-coded workflow pills with high APCA contrast and immediate accessibility",
+      "Side-by-Side Clarity: Side-by-side comparative split pane for raw vs rewritten title & content editing",
+      "Zero Visual Slop: Sharp 1px borders, subtle slate backgrounds, dark/light toggle readiness, no generic centered layouts"
+    ]
+  },
+  "typography": {
+    "font_family_heading": "'Newsreader', 'Playfair Display', 'Merriweather', serif",
+    "font_family_body": "'Plus Jakarta Sans', 'DM Sans', -apple-system, sans-serif",
+    "font_family_mono": "'JetBrains Mono', 'Fira Code', monospace",
+    "forbidden_fonts": ["Space Grotesk", "Inter (for headings)"],
+    "scale": {
+      "h1_page_header": "text-2xl sm:text-3xl font-bold tracking-tight text-slate-900 dark:text-slate-50",
+      "h2_section_header": "text-xl sm:text-2xl font-semibold tracking-tight text-slate-800 dark:text-slate-100",
+      "h3_card_header": "text-base sm:text-lg font-medium text-slate-900 dark:text-slate-100",
+      "body_regular": "text-sm text-slate-600 dark:text-slate-300 leading-relaxed",
+      "body_small": "text-xs text-slate-500 dark:text-slate-400 font-normal",
+      "eyebrow_label": "text-[11px] font-semibold tracking-wider uppercase text-slate-500 dark:text-slate-400 font-mono"
+    }
+  },
+  "colors": {
+    "theme": "Editorial High-Contrast Slate & Accent Palette",
+    "forbidden_colors": ["#1B93A4", "#7351B7"],
+    "slate_neutrals": {
+      "bg_app": "bg-slate-950 dark:bg-slate-950 light:bg-slate-50",
+      "bg_card": "bg-slate-900/90 dark:bg-slate-900/90 light:bg-white",
+      "bg_surface_subtle": "bg-slate-850/50 dark:bg-slate-800/40 light:bg-slate-100/70",
+      "border_card": "border-slate-800/80 dark:border-slate-800/80 light:border-slate-200",
+      "border_strong": "border-slate-700 dark:border-slate-700 light:border-slate-300"
+    },
+    "status_palette": {
+      "Pending_Review": {
+        "bg": "bg-amber-500/10 dark:bg-amber-500/15",
+        "border": "border-amber-500/30",
+        "text": "text-amber-600 dark:text-amber-400",
+        "badge": "bg-amber-500/15 text-amber-600 dark:text-amber-300 border-amber-500/30",
+        "label": "Pending Review",
+        "icon": "Clock"
+      },
+      "Approved_For_Rewrite": {
+        "bg": "bg-blue-500/10 dark:bg-blue-500/15",
+        "border": "border-blue-500/30",
+        "text": "text-blue-600 dark:text-blue-400",
+        "badge": "bg-blue-500/15 text-blue-600 dark:text-blue-300 border-blue-500/30",
+        "label": "Approved for Rewrite",
+        "icon": "FileCheck"
+      },
+      "Rewritten_Pending_Publish": {
+        "bg": "bg-purple-500/10 dark:bg-purple-500/15",
+        "border": "border-purple-500/30",
+        "text": "text-purple-600 dark:text-purple-400",
+        "badge": "bg-purple-500/15 text-purple-600 dark:text-purple-300 border-purple-500/30",
+        "label": "Rewritten - Pending Publish",
+        "icon": "Edit3"
+      },
+      "Published": {
+        "bg": "bg-emerald-500/10 dark:bg-emerald-500/15",
+        "border": "border-emerald-500/30",
+        "text": "text-emerald-600 dark:text-emerald-400",
+        "badge": "bg-emerald-500/15 text-emerald-600 dark:text-emerald-300 border-emerald-500/30",
+        "label": "Published",
+        "icon": "CheckCircle2"
+      }
+    },
+    "action_buttons": {
+      "primary_approve": "bg-emerald-600 hover:bg-emerald-500 text-white font-medium shadow-sm transition-colors",
+      "primary_publish": "bg-purple-600 hover:bg-purple-500 text-white font-medium shadow-sm transition-colors",
+      "secondary_rewrite": "bg-blue-600 hover:bg-blue-500 text-white font-medium shadow-sm transition-colors",
+      "neutral_action": "bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 shadow-sm transition-colors"
+    }
+  },
+  "grids_and_layouts": {
+    "dashboard_stats_grid": "grid grid-cols-2 md:grid-cols-4 gap-4 mb-6",
+    "main_content_layout": "flex flex-col lg:flex-row gap-6",
+    "tab_navigation_bar": "flex items-center gap-2 overflow-x-auto pb-2 border-b border-slate-800 mb-6",
+    "news_item_card_grid": "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5",
+    "side_by_side_editor_split": "grid grid-cols-1 lg:grid-cols-2 gap-6 items-start"
+  },
+  "key_components": {
+    "stat_cards": {
+      "description": "Top metric cards displaying count per status with filter triggers",
+      "style": "p-5 rounded-xl bg-slate-900/80 border border-slate-800 hover:border-slate-700 transition-all cursor-pointer shadow-sm"
+    },
+    "status_tabs": {
+      "description": "Top bar navigation for switching between Pending_Review, Approved_For_Rewrite, Rewritten_Pending_Publish, Published, and All Items",
+      "style": "px-4 py-2 text-sm font-medium rounded-lg transition-all"
+    },
+    "news_item_card": {
+      "description": "Card previewing single news item with media thumbnail, original vs rewritten titles, source link, and workflow actions",
+      "style": "rounded-xl bg-slate-900 border border-slate-800/80 hover:border-slate-700 p-5 space-y-4 shadow-md transition-all flex flex-col justify-between"
+    },
+    "side_by_side_modal_editor": {
+      "description": "Detailed inspection and editing modal showing Original Feed on left and Rewritten Article Draft on right with real-time word counts and media player",
+      "style": "max-w-6xl w-full bg-slate-950 border border-slate-800 rounded-2xl shadow-2xl overflow-hidden"
+    },
+    "media_preview": {
+      "description": "Supports photo thumbnail preview and video player preview with full screen lightbox toggle",
+      "photo_style": "aspect-video rounded-lg overflow-hidden border border-slate-800 object-cover w-full",
+      "video_style": "aspect-video rounded-lg overflow-hidden border border-slate-800 w-full bg-slate-950"
+    }
+  },
+  "motion_and_interactions": {
+    "card_hover": "hover:-translate-y-0.5 hover:shadow-lg transition-all duration-200 ease-out",
+    "modal_backdrop": "backdrop-blur-md bg-black/70 animate-in fade-in duration-200",
+    "tab_active_indicator": "border-b-2 border-slate-200 text-slate-100 font-semibold",
+    "toast_notifications": "Use Sonner for approval, publish, and rewrite save confirmations"
+  },
+  "image_urls": {
+    "editorial_hero": "https://images.unsplash.com/photo-1586339949916-3e9457bef6d3?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1NzZ8MHwxfHNlYXJjaHwzfHxqb LiambmFsaXNtJTIwbmV3cyUyMGVkaXRvciUyMHJlcG9ydGVyfGVufDB8fHx8MTc5MDI3Mjk0M3ww&ixlib=rb-4.1.0&q=85",
+    "news_editing_desk": "https://images.pexels.com/photos/7596918/pexels-photo-7596918.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+    "press_conference_1": "https://images.unsplash.com/photo-1771340590060-be598dfb81bd?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAxODF8MHwxfHNlYXJjaHwzfHxicmVha2luZyUyMG5ld3MlMjBwcmVzcyUyMGNvbmZlcmVuY2V8ZW58MHx8fHwxNzkwMjcyOTUxfDA&ixlib=rb-4.1.0&q=85",
+    "press_conference_2": "https://images.unsplash.com/photo-1785807047596-3f3abd23df6a?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAxODF8MHwxfHNlYXJjaHwyfHxicmVha2luZyUyMG5ld3MlMjBwcmVzcyUyMGNvbmZlcmVuY2V8ZW58MHx8fHwxNzkwMjcyOTUxfDA&ixlib=rb-4.1.0&q=85",
+    "journalist_field_report": "https://images.pexels.com/photos/10464437/pexels-photo-10464437.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+  },
+  "instructions_to_main_agent": [
+    "Ensure all interactive components have explicit data-testid attributes (e.g., data-testid='tab-pending-review', data-testid='action-approve-btn', data-testid='side-by-side-modal')",
+    "Build the dashboard with tabbed views for the 4 explicit statuses: Pending_Review, Approved_For_Rewrite, Rewritten_Pending_Publish, Published",
+    "Implement the side-by-side comparative editor view (Original Feed on Left vs Rewritten Article on Right) inside a modal or split pane",
+    "Provide quick-action buttons directly on cards (Approve, Submit Rewrite, Publish, Edit) matching status transition rules",
+    "Support media handling with clear distinction between photo and video previews",
+    "Use lucide-react or @heroicons/react for clear editorial and workflow state icons",
+    "Integrate Sonner toasts for instant feedback on status updates and database syncs"
+  ],
+  "UNIVERSAL GUIDELINES FOR MAIN AGENT": {
+    "data_testid_convention": "kebab-case, role-based, e.g. data-testid='news-card-123', data-testid='publish-button-123'",
+    "accessibility": "Ensure high APCA contrast ratios, explicit keyboard focus rings, and clear state labels",
+    "no_universal_transition": "Do not use 'transition: all' globally; apply specific transitions on background-color, border-color, and opacity",
+    "spacing": "Generous interior container padding (p-5 to p-8) to avoid text-to-border collisions"
+  }
+}

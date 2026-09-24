@@ -4,6 +4,7 @@ import {
   DialogContent,
   DialogHeader,
   DialogTitle,
+  DialogDescription,
 } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -75,6 +76,9 @@ export const NewsEditorModal = ({ item, open, onClose, onSave, onAdvance }) => {
               {cfg.label}
             </Badge>
           </div>
+          <DialogDescription className="sr-only">
+            Compare the original feed with the rewritten draft and advance the item through the editorial workflow.
+          </DialogDescription>
         </DialogHeader>
 
         <div className="overflow-y-auto flex-1 px-6 py-5">
